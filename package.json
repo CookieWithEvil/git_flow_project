@@ -1,0 +1,28 @@
+{
+  "name": "git_flow_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-nunjucks": "^4.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-watch": "^5.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CookieWithEvil/git_flow_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CookieWithEvil/git_flow_project/issues"
+  },
+  "homepage": "https://github.com/CookieWithEvil/git_flow_project#readme"
+}
