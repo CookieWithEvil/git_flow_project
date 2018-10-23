@@ -5,7 +5,7 @@ let gulp                = require('gulp'),
  cleanCSS               = require('gulp-clean-css'),
  autoprefixer           = require('gulp-autoprefixer');
 
-gulp.task('default', function () {
+gulp.task('watch', function () {
   gulp.watch(['src/style.scss','src/**/*.scss'], ['sass']);
   gulp.watch('src/**/*.html', ['html']);
   gulp.watch('dest/*.css', ['css']);
