@@ -8,7 +8,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-clean-css": "^3.10.0",
-    "gulp-nunjucks": "^4.0.0",
+    "gulp-nunjucks-render": "^2.2.2",
     "gulp-sass": "^4.0.1",
     "gulp-watch": "^5.0.1"
   },

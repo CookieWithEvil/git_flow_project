@@ -1,0 +1,44 @@
+.wrapper {
+  margin: auto;
+  width: 61%;
+  border: 1px solid pink; }
+
+.facts {
+  min-height: 400px;
+  background: #383838; }
+  .factsTitle {
+    text-align: center;
+    color: #e4e4e4; }
+    .factsTitle-header {
+      font-size: 1.5rem; }
+    .factsTitle-secondary {
+      margin: 0;
+      color: #606060;
+      font-size: 1rem;
+      font-weight: normal; }
+
+.PurchaseContact {
+  height: 80px;
+  background: #00a99d; }
+  .PurchaseContact .wrapper {
+    display: flex;
+    justify-content: space-between; }
+  .PurchaseContact_text {
+    line-height: 80px;
+    color: #e4e4e4; }
+  .PurchaseContact_buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    width: 28%; }
+    .PurchaseContact_buttons-purchase, .PurchaseContact_buttons-contact {
+      display: inline-block;
+      padding: 0 5px;
+      height: 40px;
+      color: #606060;
+      text-decoration: none;
+      border-radius: 5px;
+      background: #e4e4e4; }
+      .PurchaseContact_buttons-purchase li, .PurchaseContact_buttons-contact li {
+        list-style: none;
+        line-height: 40px; }
