@@ -1,0 +1,7 @@
+- написать gulpfile.js 
+  - все .html в dest/index.html
+  - все scss в dest/style.css
+- ромби по бокам - можно просто с <div />
+- графики - svg
+- sampleWorks - grid
+- team members - flex
