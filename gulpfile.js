@@ -5,12 +5,6 @@ let gulp                = require('gulp'),
  cleanCSS               = require('gulp-clean-css'),
  autoprefixer           = require('gulp-autoprefixer');
 
-gulp.task('watch', function () {
-  gulp.watch(['src/style.scss','src/**/*.scss'], ['sass']);
-  gulp.watch('src/**/*.html', ['html']);
-  gulp.watch('dest/*.css', ['css']);
-});
-
 gulp.task("html", function(){
 	return gulp.src("src/**/*.html")
 		    .pipe(nunjucksRender())
@@ -20,15 +14,15 @@ gulp.task("html", function(){
 gulp.task("sass", function(){
 	return gulp.src(['src/style.scss','src/**/*.scss'])
 		   .pipe(sass())
+		   .pipe(autoprefixer({
+            browsers: ['last 10 versions'],
+            cascade: true
+        }))
+    	   .pipe(cleanCSS({compatibility: 'ie8'}))
 		   .pipe(gulp.dest('dest'));
 });
 
-gulp.task("css", function(){
-	return gulp.src("dest/*.css")
-		   .pipe(cleanCSS())
-		   .pipe(autoprefixer({
-	            browsers: ['last 2 versions'],
-	            cascade: false
-	        }))
-		   .pipe(gulp.dest('dest'));
+gulp.task('default',['html','sass'], function () {
+    gulp.watch('./src/**/*.scss', ['sass']);
+    gulp.watch("./src/**/*.html", ['html']);
 });
