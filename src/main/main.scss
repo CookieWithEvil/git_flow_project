@@ -60,8 +60,25 @@
 .colorSeaGreen{
 	color: $seaGreenColor;
 }
+.sectionIcon{
+	position: relative;
+	top: -20px;
+	margin: 0 auto;
+	height: 40px;
+	width: 40px;
+	background: $seaGreenColor url("img/icon-briefcase.png") center no-repeat;
+	border-radius: 5px;
+	transform: rotate(45deg);
+	.fa-briefcase{
+		margin: 10px;
+		transform: rotate(-45deg);
+		color: $lightThemeColor;
+		font-size: 1.2rem;
+	}
+}
 //blocks
 .powerfulSkills{
+	margin-top: -40px;
 	padding: 50px 0;
 	min-height: 10px;
 	overflow: auto;
@@ -213,6 +230,7 @@
 	}
 }
 .facts{
+	margin-top: -40px;
 	padding: 80px 0;
 	min-height: 10px;
 	overflow: auto;
