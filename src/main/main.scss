@@ -1,29 +1,323 @@
 @import "variables.scss";
 
+//common for all
 .wrapper{
 	margin: auto;
 	width: 61%;
-	border: 1px solid pink;
 }
-.facts{
-	min-height: 400px;
-	background: $darkThemeColor;	
-	&Title{		
-		text-align: center;
-		color: $lightThemeColor;
-		&-header{			
-			font-size: 1.5rem;
+.rectangles{
+	display: inline-block;
+	height: 10px;
+	width: 10%;
+	&-big{
+		display: inline-block;
+		height: 12px; 
+		width: 12px;
+		background: $seaGreenColor;
+		transform: rotate(45deg);
+	}
+	&-medium{
+		height: 10px;
+		width: 10px;
+		background: rgba(0,169, 157,0.8);
+		transform: rotate(45deg);
+	}
+	&-small{
+		display: inline-block;
+		height: 8px;
+		width: 8px;
+		background: rgba(0,169, 157,0.5);
+		transform: rotate(45deg);
+	}
+} 
+.doubleLine{
+	margin-top: 10px;
+	height: 5px;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+.header{
+	margin: 0;
+}
+.secondary{
+	margin: 10px 0 0;
+	font-size: .9rem;
+	font-weight:  normal;
+	color: $lightGrayThemeColor;
+	text-align: center;
+}
+.rectImageRight,
+.rectImageLeft{
+	margin-top: 5px;
+	height: 15px;
+	width: 30px;
+	background: url("img/rect.png");
+	background-size: 100% 100%;
+}
+.rectImageLeft{
+	transform: scaleX(-1);
+}
+.colorSeaGreen{
+	color: $seaGreenColor;
+}
+//blocks
+.powerfulSkills{
+	padding: 50px 0;
+	min-height: 10px;
+	overflow: auto;
+	background: $darkThemeColor;
+	&_header{
+		&__title{
+			display: flex;
+			justify-content: space-between;
+			padding: 0 25%;
+			color: $lightThemeColor;
 		}
-		&-secondary{
-			margin: 0;
-			color: $obscureThemeColor;
-			font-size: 1rem;
-			font-weight: normal;
+	}
+	&_skills{
+		display: flex;
+		justify-content: space-between;		
+		flex-wrap: wrap;
+		&__card{
+			width: 16%;
+			text-align: center;
+			&-diagram{
+				display: inline-block;
+				.diagramText{
+					font-size: 1.8rem;
+					font-weight: bold;
+					fill: $lightThemeColor;
+				}
+			}
+			&-title{
+				display: inline-block;
+				font-size: .6rem;
+				color: $obscureThemeColor;
+			}
+		}
+		&__card:first-child{			
+			.powerfulSkills_skills__card-diagram{
+				.circle{
+					transform: rotate(-180deg);
+					transform-origin: center center;
+					stroke-dasharray: 1000;
+					stroke-dashoffset: 760;
+				}
+			}
+		}
+		&__card:nth-child(2){
+			.powerfulSkills_skills__card-diagram{
+				.circle{
+					transform: rotate(-180deg);
+					transform-origin: center center;
+					stroke-dasharray: 1000;
+					stroke-dashoffset: 720;
+				}
+			}
+		}
+		&__card:nth-child(3){
+			.powerfulSkills_skills__card-diagram{
+				.circle{
+					transform: rotate(-180deg);
+					transform-origin: center center;
+					stroke-dasharray: 1000;
+					stroke-dashoffset: 800;
+				}
+			}
+		}
+		&__card:nth-child(4){
+			.powerfulSkills_skills__card-diagram{
+				.circle{
+					transform: rotate(-180deg);
+					transform-origin: center center;
+					stroke-dasharray: 1000;
+				}
+			}
+		}
+		&__card:nth-child(5){
+			.powerfulSkills_skills__card-diagram{
+				.circle{
+					transform: rotate(-180deg);
+					transform-origin: center center;
+					stroke-dasharray: 1000;
+					stroke-dashoffset: 740;
+				}
+			}
+		}
+		&__card:nth-child(6){
+			.powerfulSkills_skills__card-diagram{
+				.circle{
+					transform: rotate(-180deg);
+					transform-origin: center center;
+					stroke-dasharray: 1000;
+					stroke-dashoffset: 840;
+				}
+			}
 		}
 	}
 }
+.sampleWorks{
+	padding: 80px 0 100px;
+	min-height: 10px;
+	overflow: auto;
+	background: $lightThemeColor;
+	&_header{
+		margin: auto;
+		color: $darkThemeColor;
+		&__title{
+			display: flex;
+			justify-content: space-between;
+			&-doubleLine{
+				width: 33%;
+			}
+		}
+	}
+	&_works{
+		margin: auto;
+		display: grid;
+		grid-template-columns: 16.55% 16.55% 16.55% 16.55% 16.55% 16.55%;
+		grid-template-rows: 250px;
+		grid-column-gap: 2px;
+		grid-row-gap: 2px;
+		min-height: 500px;
+		width: calc(100% - 4px);
+		@for $i from 1 through 12{
+			&-work:nth-child(#{$i}){
+				@if $i < 7{
+					grid-column-start: $i;
+					grid-column-end: $i + 1;
+					grid-row-start: 1;
+					grid-row-end: 2;
+				} @else{
+					grid-column-start: $i - 6;
+					grid-column-end: $i - 5;
+					grid-row-start: 2;
+					grid-row-end: 3;
+				}
+				border-radius: 5px;
+				background: $lightGrayThemeColor;
+			}
+		}		
+	}
+	&_viewAll{
+		margin: 50px auto 0;
+		display: block;
+		padding: 15px 0;
+		line-height: 10px;
+		width: 61%;
+		color: $lightThemeColor;
+		font-weight: bold;
+		text-align: center;
+		background: $seaGreenColor;
+		border-radius: 5px;
+	}
+}
+.facts{
+	padding: 80px 0;
+	min-height: 10px;
+	overflow: auto;
+	background: $darkThemeColor;
+	&_header{
+		&__title{
+			display: flex;
+			justify-content: space-between;
+			padding: 0 25%;
+			color: $lightThemeColor;			
+		}
+	}
+	&Stats{
+		padding: 0;
+		display: flex;
+		justify-content: space-between;		
+		flex-wrap: wrap;
+		color: $lightThemeColor;
+		&_fact{
+			min-height: 100px;
+			width: 24%;
+			list-style: none;
+			&__header{
+				display: flex;
+				justify-content: space-around;
+				padding: 0 20%;
+				&-rect{
+					display: inline-block;
+					margin-top: 25px;
+					height: 8px;
+					width: 8px;
+					background: $obscureThemeColor;
+					transform: rotate(45deg);
+					border-radius: 3px;
+				}
+				&-title{
+					margin: 0;
+					font-size: 3rem;
+					font-weight: normal;
+				}
+			}
+			&__divider{
+				display: flex;
+				justify-content: space-between;
+				margin: 10px 0;
+				&-line{					
+					width: 35%;
+					height: 1px;
+					border-top: 1px solid $obscureThemeColor;
+				}
+			}		
+			&__secondary{
+				margin: 0;
+				font-size: 0.8rem;
+				font-weight: bold
+			}
+		}
+		.factsStats_fact:first-child{
+			.factsStats_fact__divider{				
+				&-icon{
+					margin-top: -10px;
+					height: 21px;
+					width: 20px;
+					background: url("img/icons.png");
+				}
+			}
+		}	
+		.factsStats_fact:nth-child(2){
+			.factsStats_fact__divider{				
+				&-icon{
+					margin-top: -10px;
+					height: 21px;
+					width: 20px;
+					background: url("img/icons.png") 32% 0 no-repeat;
+					background-size: 500% 100%;
+				}
+			}
+		}	
+		.factsStats_fact:nth-child(3){
+			.factsStats_fact__divider{				
+				&-icon{
+					margin-top: -10px;
+					height: 21px;
+					width: 20px;
+					background: url("img/icons.png") 67% 0 no-repeat;
+					background-size: 500% 100%;
+				}
+			}
+		}	
+		.factsStats_fact:nth-child(4){
+			.factsStats_fact__divider{				
+				&-icon{
+					margin-top: -10px;
+					height: 21px;
+					width: 20px;
+					background: url("img/icons.png") right 0 no-repeat;
+					background-size: 500% 100%;
+				}
+			}
+		}	
+	}
+}
 .PurchaseContact{	
-	height: 80px;
+	min-height: 10px;
+	overflow: auto;
 	background: #00a99d;
 	.wrapper{
 		display: flex;
@@ -41,132 +335,225 @@
 		&-purchase,
 		&-contact{
 			display: inline-block;
-			padding: 0 5px;
-			height: 40px;
+			margin-top: 5px;
+			padding: 0 10px;
+			height: 35px;
 			color: $obscureThemeColor;
 			text-decoration: none;
 			border-radius: 5px;
 			background: $lightThemeColor;
 			li{
+				font-size: .6rem;
+				font-weight: bold;
 				list-style: none;
-				line-height: 40px;
+				line-height: 35px;
 			}
 		}
 	}
 }
-// .teamMembers{
-// 	padding: 70px 0;
-// 	min-height: 700px;
-// 	background: #f9f9f9;
-// 	&Title{		
-// 		margin: auto;
-// 		min-height: 50px;
-// 		width: 65%;
-// 		&_header{
-// 			margin: 0;
-// 			min-height: 50px;
-// 			width: 100%;
-// 			text-align: center;
-// 			span{
-// 				display: inline-block;
-// 				margin: 10px 0 0;
-// 			}
-// 			&-divider-right,
-// 			&-divider-left{
-// 				margin: 20px 0 0;
-// 				height: 5px;
-// 				width: 30%;
-// 				border-top: 1px solid gray;
-// 				border-bottom: 1px solid gray;
-// 			}
-// 			&_button-right,
-// 			&_button-left{
-// 				margin: 10px 0 0;
-// 				height: 25px;
-// 				width: 0;
-// 				color: #e4e4e4;
-// 				font-size: 1.5rem;
-// 				line-height: 10px;
-// 				border: none;
-// 				border-radius: 5px;
-// 			}
-// 			&_button-right{
-// 				background: #00a99d;
-// 				padding: 0 20px 0 2px;
-// 			}
-// 			&_button-left{
-// 				background: #383838;
-// 				padding: 0 23px 0 0;
-// 			}
-// 			&-divider-right,
-// 			&_button-right{
-// 				float: right;
-// 			}
-// 			&-divider-left,
-// 			&_button-left{
-// 				float: left;
-// 			}
-// 		}
-// 		&_secondary{
-// 			margin: 0;
-// 			font-size: 0.8rem;
-// 			font-weight: normal;
-// 			text-align: center;
-// 		}
-// 	}
-// 	&Members{
-// 		display: flex;
-// 		justify-content: space-between;
-// 		flex-wrap: wrap;
-// 		margin: 50px auto 0;
-// 		min-height: 150px;
-// 		width: 65%;
-// 		&_card{
-// 			height: 150px;
-// 			width: 20%;
-// 			font-size: .8rem;
-// 			&Img{
-// 				float: left;
-// 				margin: 0;
-// 				background: #8a8a8a;
-// 				height: 200px;
-// 				width: 100%;
-// 			}
-// 			&Info{
-// 				float: left;
-// 				margin: 0;
-// 				padding: 0;
-// 				height: 100px;
-// 				width: 100%;
-// 				text-align: center;
-// 				border: 1px solid silver;		
-// 				&-name{
-// 					position: relative;
-// 					top: -15px;
-// 					padding: 5px;
-// 					line-height: 30px;
-// 					width: 50%;
-// 					color: #fff;
-// 					font-weight: bold;
-// 					background: #00a99d;					
-// 				}
-// 				&-title{
-// 					color: #606060;
-// 				}
-// 				&-contacts{
-// 					margin: 0;
-// 					padding: 0;
-// 					color: #aaaaaa;
-// 					li{
-// 						list-style: none;
-// 						.fa-phone{
-// 							transform:rotateY(180deg);
-// 							unicode-bidi:bidi-override;
-// 							direction:rtl;
-// 						}
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+.teamMembers{
+	padding: 70px 0;
+	min-height: 10px;
+	overflow: auto;
+	background: #f9f9f9;
+	&_header{
+		margin: auto;
+		color: $darkThemeColor;
+		&__title{
+			display: flex;
+			justify-content: space-between;
+			&_button-right,
+			&_button-left{
+				height: 25px;
+				line-height: 20px;
+				color: $lightThemeColor;
+				font-size: 1.5rem;
+				background: $darkThemeColor;
+				border: none;
+				border-radius: 5px;
+			}
+			&-doubleLine{
+				width: 25%;
+			}
+		}
+	}
+	&_cards{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: 50px auto 0;
+		min-height: 150px;
+		&__card{
+			min-height: 150px;
+			width: 20%;
+			&Img{
+				float: left;
+				margin: 0;
+				background: #8a8a8a;
+				height: 150px;
+				width: 100%;
+			}
+			&Info{
+				float: left;
+				margin: 0;
+				padding: 0;
+				height: 100px;
+				width: 100%;
+				text-align: center;
+				border: 1px solid silver;
+				&-name{
+					position: relative;
+					top: -15px;
+					padding: 8px 10px;
+					line-height: 30px;
+					width: 50%;
+					color: #fff;
+					font-size: 0.8rem;
+					font-weight: bold;
+					background: #00a99d;	
+					border-radius: 5px;
+				}
+				&-title{
+					margin-top: -10px;
+					font-size: 0.5rem;
+					color: #606060;
+				}
+				&-contacts{
+					margin: 0;
+					padding: 0;
+					color: #aaaaaa;
+					li{
+						margin: 10px 0;
+						list-style: none;
+						font-size: 0.6rem;
+						.fa-phone{
+							transform:rotateY(180deg);
+							unicode-bidi:bidi-override;
+							direction:rtl;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media all and (max-width: 995px) and (min-width: 683px){
+	.wrapper{
+		width: 100%;
+	}
+	.wrapper{
+		width: 100%;
+	}
+	.header{
+		font-size: 2rem;
+	}
+	.secondary{
+		margin: 10px 0 20px;
+		font-size: 0.6rem;
+	}
+	.powerfulSkills{
+		padding: 30px 0;
+		&__title{
+			display: flex;
+			justify-content: space-between;
+			padding: 0 15%;
+			color: $lightThemeColor;
+		}
+		&_skills{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			&__card{
+				min-height: 110px;
+				width: 30%;
+				border: 1px solid $obscureThemeColor;
+				&-diagram{
+					float: left;
+				}
+				&-title{
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+	.sampleWorks{
+		padding: 30px 0;
+		&_viewAll{
+			margin: 20px auto 0;
+			width: 90%;
+		}
+	}
+	.facts{
+		padding: 30px 0;
+		&Stats{
+			padding: 0 10%;
+			&_fact{
+				&__secondary{
+					margin: 0;
+					font-size: 1.3rem;
+					font-weight: bold
+				}
+			}
+		}
+	}
+	.PurchaseContact{
+		padding: 30px 0;
+		.wrapper{
+			display: block;
+			width: 80%;
+		}		
+		&_text{
+			width: 100%;
+			font-size: .6rem;
+			text-align: center;
+		}
+		&_buttons{
+			margin: auto;
+			width: 100%;
+			&-purchase,
+			&-contact{
+				padding: 20px 10px;
+				li{
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+	.teamMembers{
+		padding: 30px 0;
+		&_cards{
+			margin: 30px auto 0;
+			width: 90%;
+			&__card{
+				margin-bottom: 20px;
+				min-height: 150px;
+				width: 40%;
+				&Info{
+					padding: 30px 0 50px;
+					&-name{
+						top: -30px;
+						font-size: 2rem;
+					}
+					&-title{
+						font-size: 1.4rem;
+					}
+					&-contacts{
+						margin: 0;
+						padding: 0;
+						color: #aaaaaa;
+						li{
+							margin: 10px 0;
+							list-style: none;
+							font-size: 1.5rem;
+							.fa-phone{
+								transform:rotateY(180deg);
+								unicode-bidi:bidi-override;
+								direction:rtl;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
