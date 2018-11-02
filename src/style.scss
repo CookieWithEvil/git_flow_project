@@ -1,6 +1,7 @@
-@import "main/main.scss";
 body{
 	margin: 0;
 	font: 16px "Raleway";
 }
+@import "header/main.scss";
+@import "main/main.scss";
 @import "footer/footer.scss";

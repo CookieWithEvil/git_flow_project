@@ -1,7 +1,7 @@
 @import "variables.scss";
 
 //common for all
-.wrapper{
+.wrapperContent{
 	margin: auto;
 	width: 61%;
 }
@@ -36,7 +36,7 @@
 	border-top: 1px solid gray;
 	border-bottom: 1px solid gray;
 }
-.header{
+.headerContent{
 	margin: 0;
 }
 .secondary{
@@ -337,7 +337,7 @@
 	min-height: 10px;
 	overflow: auto;
 	background: #00a99d;
-	.wrapper{
+	.wrapperContent{
 		display: flex;
 		justify-content: space-between;
 	}
