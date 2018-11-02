@@ -6,13 +6,15 @@ let gulp                = require('gulp'),
  autoprefixer           = require('gulp-autoprefixer');
 
 gulp.task("html", function(){
-	return gulp.src("src/**/*.html")
+	//return gulp.src("src/**/*.html") prev. ver.
+	return gulp.src("src/index.html")
 		    .pipe(nunjucksRender())
 		   .pipe(gulp.dest('dest'));
 });
 
 gulp.task("sass", function(){
-	return gulp.src(['src/style.scss','src/**/*.scss'])
+	// return gulp.src(['src/style.scss','src/**/*.scss']) prev. ver.
+	return gulp.src('src/app.min.scss')	
 		   .pipe(sass())
 		   .pipe(autoprefixer({
             browsers: ['last 10 versions'],
@@ -23,6 +25,6 @@ gulp.task("sass", function(){
 });
 
 gulp.task('default',['html','sass'], function () {
-    gulp.watch('./src/**/*.scss', ['sass']);
-    gulp.watch("./src/**/*.html", ['html']);
+    gulp.watch('./src/app.min.scss', ['sass']);
+    gulp.watch("./src/index.html", ['html']);
 });
